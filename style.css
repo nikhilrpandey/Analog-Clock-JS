@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: #00c3ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(38, 204, 221, 0.5);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    position:relative;
+    border:5px solid white;
+    box-shadow: 0px 15px 15px green;
+    color:whitesmoke;
+    font-weight: 600;
+}
+
+.clock::after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: 15;
+
+}
+
+.Number{
+    --rotation:0deg;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotate(var(--rotation));
+    /* background-color: royalblue; */
+    text-align: center;
+    padding: 10px;
+}
+
+.reverse-rot{
+    --rev:0deg;
+    transform: rotate(var(--rev));
+}
+
+.Number.Number1{
+    --rotation:30deg;
+}
+
+.Number.Number2{
+    --rotation:60deg;
+}
+.Number.Number3{
+    --rotation:90deg;
+}.Number.Number4{
+    --rotation:120deg;
+}
+.Number.Number5{
+    --rotation:150deg;
+}
+.Number.Number6{
+    --rotation:180deg;
+}
+.Number.Number7{
+    --rotation:210deg;
+}
+.Number.Number8{
+    --rotation:240deg;
+}
+.Number.Number9{
+    --rotation:270deg;
+}
+.Number.Number10{
+    --rotation:300deg;
+}
+.Number.Number11{
+    --rotation:330deg;
+}
+
+/* for the making the numbers straight */
+.Number1 .reverse-rot{
+    --rev:-30deg;
+}
+.Number2 .reverse-rot{
+    --rev:-60deg;
+}
+.Number3 .reverse-rot{
+    --rev:-90deg;
+}
+.Number4 .reverse-rot{
+    --rev:-120deg;
+}
+.Number5 .reverse-rot{
+    --rev:-150deg;
+}
+.Number6 .reverse-rot{
+    --rev:-180deg;
+}
+.Number7 .reverse-rot{
+    --rev:-210deg;
+}
+.Number8 .reverse-rot{
+    --rev:-240deg;
+}.Number9 .reverse-rot{
+    --rev:-270deg;
+}
+.Number10 .reverse-rot{
+    --rev:-300deg;
+}
+.Number11 .reverse-rot{
+    --rev:-330deg;
+}
+
+
+.hand{
+    --rotation:0deg;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    z-index: 10;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.hand.minute-hand{
+    width: 5px;
+    height: 40%;
+}
+
+.hand.second-hand{
+    width:1px;
+    background-color: red;
+    height: 45%;
+}
+
+.hand.hour-hand{
+    width:8px;
+    height: 35%;
+}
+
+/* decoration */
+
+.decoration{
+    --rotation:0;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(var(--rotation));
+    background-color:aliceblue;
+    
+}
+
+.decoration.dec-1{--rotation:18deg;z-index: -1;}
+.decoration.dec-2{--rotation:36deg;}
+.decoration.dec-3{--rotation:54deg;}
+.decoration.dec-4{--rotation:72deg;}
+.decoration.dec-5{--rotation:90deg;}
+.decoration.dec-6{--rotation:108deg;}
+.decoration.dec-7{--rotation:126deg;}
+.decoration.dec-8{--rotation:144deg;}
+.decoration.dec-9{--rotation:162deg;}
+.decoration.dec-10{--rotation:180deg;}
+.decoration.dec-11{--rotation:198deg;}
+.decoration.dec-12{--rotation:216deg;}
+.decoration.dec-13{--rotation:234deg;}
+.decoration.dec-14{--rotation:252deg;}
+.decoration.dec-15{--rotation:270deg;}
+.decoration.dec-16{--rotation:288deg;}
+.decoration.dec-17{--rotation:306deg;}
+.decoration.dec-18{--rotation:324deg;}
+.decoration.dec-19{--rotation:342deg;}
+.decoration.dec-20{--rotation:360deg;}
